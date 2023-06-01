@@ -26,6 +26,8 @@ input2.onkeydown = () => console.log("key down");
 input1.onchange = () => console.log(("valor 1"));
 input1.onchange = () => console.log(("valor 2"));
 
+
+
 //evento input
 input1.addEventListener("input", ()=>{
     console.log(input1.value);
