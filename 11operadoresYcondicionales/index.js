@@ -30,7 +30,7 @@ const permiso = (usuario.edad >= 18) ? true : false
 permiso ? alert ("puede comprar alcohol") : alert ("no puede comprar alcohol")
 
 
-//OPERADOR LOGICO AND
+//OPERADOR LOGICO AND &&
 const carrito = []
 
 if (carrito.length === 0) {
@@ -196,7 +196,7 @@ const desestructurar = (item) => {
 desestructurar(producto)
 
 //desestructurando lo que reciba por parametro
-const desestructurar2 =({id, nombre}) => {
+const desestructurar2 = ({id, nombre}) => {
     console.log(id, nombre);
 }
 desestructurar2 (producto)
@@ -218,3 +218,72 @@ const [,,c] = nombres
 console.log(c);
 
 //SPREAD
+//desparramar un array u objeto
+//cambiar la forma en la que presentamos
+
+// SPREAD DE ARRAYS
+const cuerpo = ["cabeza", "hombro", "cuerpo"]
+console.log(cuerpo); //["cabeza", "hombro", "cuerpo"]
+console.log(...cuerpo); // cabeza, hombro, cuerpo
+// al spredear envia todos los elementos como parametros individuales
+
+const numbers = [4, 55, 9, 2]
+console.log(Math.max(numbers));//NaN
+console.log(Math.max(...numbers));//55
+
+const nombre1 = ["juan", "julieta"];
+const nombre2 = ["adrian", "german"];
+
+//spread de los dos arrays dentro de otro
+const nombres1y2 = [...nombre1, ...nombre2]
+console.log(nombres1y2); //["juan", "julieta", "adrian", "german"]
+
+//spread del array en un objeto
+const nombresObj = {
+    ...nombres1y2
+}
+console.log(nombresObj); // cada propiedad toma como nombre el indice de los elementos
+
+//SPREAD DE OBJETOS
+//Util cuando queremos replicar o modificar estructuras de objetos
+//Ya que nos permite listar todas sus propiedades y valores y luego modificar y agregar
+
+const user1 = {
+    nombre: "juan",
+    edad: 22,
+    curso: "javascript"
+}
+
+//lista todas las propiedades y valores de user1 dentro de otro objeto
+
+const user2 = {
+    ...user1
+}
+
+console.log(user2);
+
+const user3 = {
+    ...user1,
+    curso: "react",
+    nota: 10
+}
+console.log(user3);// se sobreescribe la propiedad con un nuevo valor, prevalece la ultima declarada
+
+// rest parameters
+// una funcion va a recibir una cantidad indeterminada de parametros 
+// agrupandolos en un array
+
+function sumar(...num) {
+    console.log(num);
+}
+
+sumar (4,2) // [4, 2]
+sumar (4,2, 12, 12, 33, 44) // [4, 2, 12, 12, 33, 44]
+
+// usamos el metodo reduce
+function suma(...num) {
+    return num.reduce((acc, n) => acc + n, 0)
+}
+
+console.log(suma(4, 2));//6
+console.log(suma(100, 300));//400
