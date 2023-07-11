@@ -1,4 +1,5 @@
 //JSON
+//javascript object notation
 //stringify: acepta un objeto como parametro y devuelve un JSON
 
 const producto1 = {id: 2, producto: "Arroz"};
