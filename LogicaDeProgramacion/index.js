@@ -34,8 +34,9 @@ if (num3 > mayor) {
 console.log(`el numero mayor es ${mayor}`);
 
 //EJERCICIO 3
-//Ejercicio de números primos: Escribe un programa que solicite al usuario un número y determine si es un número primo o no.Ejercicio de números primos: 
-//Escribe un programa que solicite al usuario un número y determine si es un número primo o no.
+//Ejercicio de números primos:  
+//Escribe un programa que solicite al usuario un número y 
+//determine si es un número primo o no.
 
 let numero = parseInt ( prompt("ingrese un numero") )
 
@@ -157,5 +158,113 @@ function ordenarNumeros (lista, orden) {
 //llamar a la funcion de ordenamiento con la lista y la preferencia
 ordenarNumeros(listaDeNumeros, "de3scendente")
 
+//ejercicio 7
+// encontrar un numero mayor
+//Escribe un programa que encuentre el número mayor en un array de números.
+
+function encontrarNumeroMayor (array) {
+  let mayor = array [0];
+
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] > mayor) {
+      mayor = array[i];
+    }
+  }
+
+  return mayor; //se usa return mayor para especificar el valor que la funcion debe retornar cuando es llamada
+}
+
+const num7 = [10, 4, 5, 6, 33]
+const mayor2 = encontrarNumeroMayor(num7) 
+//Al utilizar return, la función encontrarNumeroMayor 
+//finaliza su ejecución y retorna el número mayor. 
+//Esto permite que el valor del número mayor pueda ser asignado a una variable
+
+console.log("el numero mayor es:", mayor2);
 
 
+//EJERCICIO 8
+//Calcular el promedio
+//Escribe un programa que calcule el promedio de un array de números.
+
+function calcularPromedio(array2) {
+  let suma = 0
+
+  for (let i = 0; i < array2.length; i++){
+    suma += array2[i]  
+}
+
+const promedio = suma / array2.length;
+
+return promedio;
+}
+
+const num8= [1, 4, 5, 6]
+
+const promedio = calcularPromedio(num8)
+
+console.log("el promedio es:", promedio);
+
+
+//EJERCICIO 9
+//Ejercicio: Encontrar números pares
+//Escribe un programa que encuentre todos los números pares en un array de números y 
+//los devuelva en un nuevo array.
+
+function encontrarNumerosPares (array) {
+  const numerosPares = [];
+
+  for (let i = 0; i < array.length; i++){
+    if(array[i] % 2 === 0) {
+      numerosPares.push(array[i])
+    }
+  }
+  return numerosPares
+}
+
+const num9 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const pares = encontrarNumerosPares(num9)
+
+console.log("los numeros pares son:", pares);
+
+//ejercicio 10
+//eliminar duplicados de un array
+//Escribe un programa que elimine los elementos duplicados de un array, 
+//dejando solo una instancia de cada elemento.
+
+function eliminarDuplicados (array) {
+  const resultado = [];
+
+  for (let i = 0; i < array.length; i++) {
+      if (resultado.indexOf(array[i]) === -1) { //indexOf devuelve -1 xq no existe, si existe devuelve el numero repetido y no lo agrega al nuevo array
+        resultado.push(array[i])
+      }
+  }
+  return resultado; 
+}
+//ejemplo de uso
+const num10 =[ 1, 2, 2, 4, 5, 6, 6, 8]
+const sinDuplicar = eliminarDuplicados(num10)
+console.log("el nuevo array sin duplicar es:", sinDuplicar);
+
+//ejercicio 11
+// Encontrar el número menor
+//Escribe un programa que encuentre el número menor en un array de números.
+
+function encontrarMenor (array) {
+  let menor = array[0]
+
+  for (let i = 0 ; i< array.length; i++) {
+    if (array [i] < menor) {
+       menor = array [i] 
+    }    
+  }
+
+  return menor
+}
+
+//ejemplo de uso
+
+const num11 = [33, 44, 5, 3, 66, 6]
+const menor = encontrarMenor(num11)
+console.log("el numero menor es:", menor);
